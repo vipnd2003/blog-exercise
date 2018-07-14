@@ -48,12 +48,6 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li>
-                                <a href="{{ route('dashboard') }}">
-                                    Dashboard
-                                </a>
-                            </li>
-
-                            <li>
                                 <a href="{{ route('posts.index') }}">
                                     @if (Auth::user()->role_id == 1)
                                         All posts
@@ -94,13 +88,7 @@
             </div>
         </nav>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
-                    @yield('content')
-                </div>
-            </div>
-        </div>
+        @yield('content')
     </div>
 
     <!-- Scripts -->

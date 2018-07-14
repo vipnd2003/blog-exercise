@@ -11,13 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('dashboard');
 
 Auth::routes();
 
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('posts', 'PostController');
-    Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 });
